@@ -1,0 +1,46 @@
+.m-wrapper {     
+    display: block;
+    border: 0.1rem solid #555455;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 7rem;
+    width: 30rem;
+    height: 50rem;
+  }
+  div.m-wrapper{
+    width: 20rem;
+    height: 32rem;
+  }
+
+  input{
+    margin-bottom: 1rem; 
+    width: 95%;
+  }
+  label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 10px solid;
+    margin-left: 5px;
+    text-decoration: 50px solid;
+    gap: 2rem;
+  }
+  .selection-boxes{  
+    display:flex;  
+    font-size: 15px;
+    width: 40px;
+    height: 40px;    
+    border: 2px solid #007BFF;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  .selected {
+    background-color: #007BFF;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+  }
+  
+  
