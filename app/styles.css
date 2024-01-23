@@ -1,46 +1,245 @@
-.m-wrapper {     
-    display: block;
-    border: 0.1rem solid #555455;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 7rem;
-    width: 30rem;
-    height: 50rem;
+/* Regular styles for all devices */
+body {
+  font-size: 16px;
+  color: #333;
+}
+.m-wrapper {
+  position: relative;
+  border: 0.1rem solid #555455;
+  text-align: center;
+  margin-left: 7rem;
+  font-size: 10px;
+  gap: 20px;
+  width: 20rem;
+  height: 40rem;
+  padding: 5px;
+}
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 10px;
+  margin-left: 5px;
+  gap: 2rem;
+}
+.selection-boxes {
+  display: flex;
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #007bff;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.selection-boxes:hover {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+  background-color: #007bff;
+  color: #fff;
+}
+.selected {
+  color: #007bff;
+}
+.ingredient {
+  flex-wrap: wrap;
+}
+.pieces {
+  display: flex;
+  font-size: 14px;
+  margin-right: 15px;
+  margin-left: 25px;
+  margin-top: -50px;
+}
+h5 {
+  display: flex;
+  width: 100%;
+}
+.pieces_ {
+  display: flex;
+  font-size: 14px;
+  margin-right: 1px;
+  margin-left: 10px;
+  margin-top: -40px;
+}
+.ingredient_ {
+  flex-wrap: wrap;
+  font-size: large;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.save,
+.clear {
+  background-color: green;
+  color: #fff;
+  border-radius: 10%;
+  width: 5rem;
+  height: 2rem;
+  border-color: transparent;
+}
+.button button.save:hover,
+.button button.clear:hover {
+  cursor: pointer;
+  animation: blinker 1s linear;
+}
+@keyframes blinker {
+  40% {
+    opacity: 0.7;
   }
-  div.m-wrapper{
-    width: 20rem;
-    height: 32rem;
+}
+/* Additional styles for the order-container */
+.order-container {
+  position:absolute;
+  top: 0.1rem;
+  right: -35rem;
+  display: grid;  
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  background-image: size(40px, 40px);
+  max-width: 500px;
+}
+.order {
+  background-color: #efefef;
+  padding: 1rem;
+  position: relative;  
+}
+.order .close {
+  color: #ff0000;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.order .line {
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0;
+}
+.order .order-content strong {
+  margin-right: 0.5rem;
+}
+.order .total {
+  margin-top: 1rem;
+  text-align: right;
+}
+.order h2 {  
+  margin: 0;
+}
+.order-content  {
+  text-align: left;    
+  margin-top: 20px;
+  padding: 1px;
+  gap: 5px;
+  left: 5px;
+  font-size: 14px;  
+}
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;   
+  color: red;
+}
+.close:hover {
+  cursor: pointer;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+.total {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;  
+}
+.phone-input-container {
+  display: flex;
+  align-items: center;
+}
+.phone-input-container :nth-child(1) {
+  width: 50px;
+}
+.country-code {
+  padding: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 5px;
+  text-align: center;
+  font-size: 13px;
+}
+.country-code,
+input {
+  box-sizing: border-box;
+  height: 32px;
+  width: 100%;
+}
+input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  padding: 5px;
+}
+.selection-boxes {
+  color: #007bff;
+}
+.selection-boxes.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Add @media queries for responsiveness */
+@media screen and (max-width: 500px) {
+  .m-wrapper {
+    margin-left: 10px; /* Adjust as needed */
+    width: 100%; /* Make it full-width */
   }
 
-  input{
-    margin-bottom: 1rem; 
-    width: 95%;
+  .order-container {
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 90%; /* Make it full-width */
   }
-  label{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 10px solid;
-    margin-left: 5px;
-    text-decoration: 50px solid;
-    gap: 2rem;
+
+  .close {
+    font-size: 25px; /* Adjust as needed */
   }
-  .selection-boxes{  
-    display:flex;  
-    font-size: 15px;
-    width: 40px;
-    height: 40px;    
-    border: 2px solid #007BFF;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
+
+  /* Add more @media rules as needed */
+}
+
+/* Add this to styles.css */
+
+@keyframes borderShine {
+  to {
+    border-color: #007bff; /* Adjust the color as needed */
+    box-shadow: 0 0 10px #007bff; /* Adjust the color and size as needed */
   }
-  .selected {
-    background-color: #007BFF;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
-  }
-  
-  
+}
+
+input:focus,
+select:focus {
+  animation: borderShine 0.5s forwards;
+}
+h4,
+h5 {
+  font-size: 14px;
+}
+.qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+
